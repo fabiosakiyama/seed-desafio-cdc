@@ -1,4 +1,4 @@
-[![CDC-Master Actions Status](https://github.com/fabiosakiyama/seed-desafio-cdc/workflows/Java-CI-with-Maven/badge.svg)](https://github.com/fabiosakiyama/seed-desafio-cdc/actions)
+![Java-CI-with-Maven](https://github.com/fabiosakiyama/seed-desafio-cdc/workflows/Java-CI-with-Maven/badge.svg?branch=master)
 
 # Faça um fork desse repositório
 
