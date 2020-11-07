@@ -10,9 +10,11 @@ import javax.persistence.Id;
 import javax.validation.constraints.Email;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class Autor {
 
 	@Id
@@ -22,7 +24,7 @@ public class Autor {
 	@Column(nullable = false)
 	private String nome;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String email;
 	
 	@Column(nullable = false, length = 400)

@@ -15,6 +15,7 @@ public class NovoAutorRequest {
 	
 	@Email
 	@NotBlank
+	@UniqueEmail
 	private String email;
 	
 	@NotBlank
