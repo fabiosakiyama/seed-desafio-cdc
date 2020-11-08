@@ -10,6 +10,7 @@ O desafio consiste em implementar uma parte do casa do código (https://www.casa
 - Lombok
 - H2
 - JUnit 5
+- Swagger
 
 # Como rodar?
 
