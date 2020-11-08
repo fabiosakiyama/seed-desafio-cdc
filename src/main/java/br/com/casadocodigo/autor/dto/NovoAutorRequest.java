@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import br.com.casadocodigo.autor.model.Autor;
+import br.com.casadocodigo.util.UniqueValue;
 import lombok.Data;
 
 @Data
@@ -15,7 +16,7 @@ public class NovoAutorRequest {
 	
 	@Email
 	@NotBlank
-	@UniqueEmail
+	@UniqueValue(tableName = "Autor", columnName = "email")
 	private String email;
 	
 	@NotBlank

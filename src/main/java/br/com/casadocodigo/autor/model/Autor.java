@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,7 +32,7 @@ public class Autor {
 	@Column(nullable = false)
 	private Instant instanteRegistrado;
 
-	public Autor(String nome, @Email String email, String descricao) {
+	public Autor(String nome, String email, String descricao) {
 		this.nome = nome;
 		this.email = email;
 		this.descricao = descricao;

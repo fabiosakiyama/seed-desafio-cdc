@@ -1,4 +1,4 @@
-package br.com.casadocodigo.autor.dto;
+package br.com.casadocodigo.util;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,11 +10,15 @@ import javax.validation.Payload;
 
 @Target({ ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = UniqueEmailValidator.class)
-public @interface UniqueEmail {
-	String message() default "{UniqueEmail}";
+@Constraint(validatedBy = UniqueValueValidator.class)
+public @interface UniqueValue {
+	String message() default "{unique.value}";
 
 	Class<?>[] groups() default {};
 
 	Class<? extends Payload>[] payload() default {};
+	
+	String columnName();
+	
+	String tableName();
 }
