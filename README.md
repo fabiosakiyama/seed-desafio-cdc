@@ -15,3 +15,4 @@ O desafio consiste em implementar uma parte do casa do código (https://www.casa
 
 - Utilizar o maven wrapper p/ buildar (./mvnw clean install) e subir a app (./mvnw spring-boot:run)
 - O banco configurado é o h2 em memória, ou seja, não vai persistir dados. (http://localhost:8080/h2/login.do)
+- Acesse http://localhost:8080/swagger-ui/#/ para ver os endpoints disponíveis
