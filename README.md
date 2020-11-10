@@ -2,7 +2,8 @@
 
 # Desafio 1 da segunda jornada do Dev Eficiente
 
-O desafio consiste em implementar uma parte do casa do código (https://www.casadocodigo.com.br/), seguindo as práticas do CDD (Cognitive Driven Development)
+O desafio consiste em implementar uma parte do casa do código (https://www.casadocodigo.com.br/), seguindo as práticas do CDD (Cognitive Driven Development), proposto na jornada
+do https://deveficiente.com/
 
 # Stack
 - JDK 11
