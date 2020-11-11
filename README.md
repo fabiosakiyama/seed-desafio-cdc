@@ -1,7 +1,20 @@
 ![Java-CI-with-Maven](https://github.com/fabiosakiyama/seed-desafio-cdc/workflows/Java-CI-with-Maven/badge.svg?branch=master)
 
-# Faça um fork desse repositório
+# Desafio 1 da segunda jornada do Dev Eficiente
 
-Este é um repositório vazio de propósito. A ideia é que você faça um fork para que eu, Alberto, possa usar o github para ter a chance de olhar vários dos códigos produzido por você e seus(as) colegas da Jornada Dev Eficiente :). 
+O desafio consiste em implementar uma parte do casa do código (https://www.casadocodigo.com.br/), seguindo as práticas do CDD (Cognitive Driven Development), proposto na jornada
+do https://deveficiente.com/
 
-Durante cada uma das seis semanas eu vou pegar código por amostragem e analisar. Feito isso, vou criar um vídeo anonimizando a pessoa que é dona do código, com as minhas observações e postar isso como material de suporte da funcionalidade :). 
+# Stack
+- JDK 11
+- Spring boot 2.3.5
+- Lombok
+- H2
+- JUnit 5
+- Swagger
+
+# Como rodar?
+
+- Utilizar o maven wrapper p/ buildar (./mvnw clean install) e subir a app (./mvnw spring-boot:run)
+- O banco configurado é o h2 em memória, ou seja, não vai persistir dados. (http://localhost:8080/h2/login.do)
+- Acesse http://localhost:8080/swagger-ui/#/ para ver os endpoints disponíveis
