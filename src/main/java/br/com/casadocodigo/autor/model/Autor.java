@@ -9,15 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@NoArgsConstructor
 public class Autor {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(nullable = false)
@@ -31,6 +29,9 @@ public class Autor {
 	
 	@Column(nullable = false)
 	private Instant instanteRegistrado;
+	
+	@Deprecated
+	public Autor() {}
 
 	public Autor(String nome, String email, String descricao) {
 		this.nome = nome;

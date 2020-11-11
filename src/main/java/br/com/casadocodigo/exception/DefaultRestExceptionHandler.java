@@ -2,6 +2,7 @@ package br.com.casadocodigo.exception;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -25,8 +26,11 @@ public class DefaultRestExceptionHandler extends ResponseEntityExceptionHandler 
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 		List<String> errors = new ArrayList<String>();
+		Locale locale = LocaleContextHolder.getLocale();
 		for (FieldError error : ex.getBindingResult().getFieldErrors()) {
-			errors.add(messageSource.getMessage(error.getObjectName() + "." + error.getField(), error.getArguments(), LocaleContextHolder.getLocale()) + ": " + messageSource.getMessage(error, LocaleContextHolder.getLocale()));
+			String code = error.getObjectName() + "." + error.getField();
+			Object[] arguments = error.getArguments();
+			errors.add(messageSource.getMessage(code, arguments, locale) + ": " + messageSource.getMessage(error, locale));
 		}
 		DefaultApiError apiError = new DefaultApiError(errors);
 		return handleExceptionInternal(ex, apiError, headers, status, request);

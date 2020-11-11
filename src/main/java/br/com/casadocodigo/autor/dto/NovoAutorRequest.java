@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import br.com.casadocodigo.autor.model.Autor;
-import br.com.casadocodigo.util.UniqueValue;
+import br.com.casadocodigo.util.dto.validators.UniqueValue;
 import lombok.Data;
 
 @Data

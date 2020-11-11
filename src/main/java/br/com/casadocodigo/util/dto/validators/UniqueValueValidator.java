@@ -1,4 +1,4 @@
-package br.com.casadocodigo.util;
+package br.com.casadocodigo.util.dto.validators;
 
 import javax.persistence.EntityManager;
 import javax.validation.ConstraintValidator;
