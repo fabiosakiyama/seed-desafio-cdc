@@ -20,10 +20,14 @@ import br.com.casadocodigo.util.dto.validators.ExistsId;
 import br.com.casadocodigo.util.dto.validators.UniqueValue;
 import lombok.Data;
 
+/*
+ * 5
+ */
 @Data
 public class NovoLivroRequest {
 	
 	@NotBlank
+	//1
 	@UniqueValue(tableName = "Livro", columnName = "titulo")
 	private String titulo;
 	
@@ -50,6 +54,7 @@ public class NovoLivroRequest {
 	private LocalDate dataDePublicacao;
 	
 	@NotNull
+	//1
 	@ExistsId(klass = Categoria.class)
 	private Long categoriaId;
 	
@@ -57,6 +62,7 @@ public class NovoLivroRequest {
 	@ExistsId(klass = Autor.class)
 	private Long autorId;
 
+	//3
 	public Livro toModel(EntityManager entityManager) {
 		Categoria categoria = entityManager.find(Categoria.class, categoriaId);
 		Autor autor = entityManager.find(Autor.class, autorId);
