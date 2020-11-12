@@ -8,6 +8,9 @@ import br.com.casadocodigo.autor.model.Autor;
 import br.com.casadocodigo.util.dto.validators.UniqueValue;
 import lombok.Data;
 
+/*
+ * 1 (max 9)
+ */
 @Data
 public class NovoAutorRequest {
 	

@@ -21,7 +21,7 @@ import br.com.casadocodigo.util.dto.validators.UniqueValue;
 import lombok.Data;
 
 /*
- * 5
+ * 5 (max 9)
  */
 @Data
 public class NovoLivroRequest {

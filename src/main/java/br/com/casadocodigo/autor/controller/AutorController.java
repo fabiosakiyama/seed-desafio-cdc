@@ -12,16 +12,21 @@ import br.com.casadocodigo.autor.dto.NovoAutorRequest;
 import br.com.casadocodigo.autor.model.Autor;
 import br.com.casadocodigo.autor.repository.AutorRepository;
 
+/*
+ * 3 (max 7)
+ */
 @RestController
 @RequestMapping("/autores")
 public class AutorController {
 	
+	//1
 	private AutorRepository autorRepository;
 
 	public AutorController(AutorRepository autorRepository) {
 		this.autorRepository = autorRepository;
 	}
 
+	//2
 	@PostMapping
 	public ResponseEntity<Autor> salvaAutor(@Valid @RequestBody NovoAutorRequest request){
 		Autor autorSalvo = autorRepository.save(request.toModel());

@@ -12,16 +12,21 @@ import br.com.casadocodigo.categoria.dto.NovaCategoriaRequest;
 import br.com.casadocodigo.categoria.model.Categoria;
 import br.com.casadocodigo.categoria.repository.CategoriaRepository;
 
+/*
+ * 3 (max 7)
+ */
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
 	
+	//1
 	private CategoriaRepository categoriaRepository;
 	
 	public CategoriaController(CategoriaRepository categoriaRepository) {
 		this.categoriaRepository = categoriaRepository;
 	}
 
+	//2
 	@PostMapping
 	public ResponseEntity<Categoria> salvaCategoria(@Valid @RequestBody NovaCategoriaRequest request) {
 		Categoria categoria = categoriaRepository.save(request.toModel());

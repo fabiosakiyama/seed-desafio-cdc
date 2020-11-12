@@ -21,7 +21,7 @@ import br.com.casadocodigo.livro.repository.LivroRepository;
 
 
 /*
- * 5 
+ * 5 (max 7)
  */
 @RestController
 @RequestMapping("/livros")
