@@ -14,7 +14,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 
-import br.com.casadocodigo.autor.model.Autor;
+import br.com.casadocodigo.domain.autor.model.Autor;
 import br.com.casadocodigo.util.dto.validators.UniqueValue;
 import br.com.casadocodigo.util.dto.validators.UniqueValueValidator;
 
