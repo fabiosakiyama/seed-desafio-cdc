@@ -9,8 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import br.com.casadocodigo.domain.pais.model.Pais;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class Estado {
 
 	@Id
@@ -29,5 +31,9 @@ public class Estado {
 	public Estado(String nome, Pais pais) {
 		this.nome = nome;
 		this.pais = pais;
+	}
+	
+	void setId(Long id) {
+		this.id = id;
 	}
 }

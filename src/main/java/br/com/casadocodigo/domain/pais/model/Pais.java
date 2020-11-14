@@ -1,5 +1,6 @@
 package br.com.casadocodigo.domain.pais.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -24,12 +25,16 @@ public class Pais {
 	private String nome;
 	
 	@OneToMany(mappedBy = "pais", orphanRemoval = true)
-	private List<Estado> estados;
+	private List<Estado> estados = new ArrayList<>();
 	
 	@Deprecated
 	public Pais() {}
 
 	public Pais(String nome) {
 		this.nome = nome;
+	}
+	
+	void setId(Long id) {
+		this.id = id;
 	}
 }

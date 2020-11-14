@@ -1,4 +1,4 @@
-package br.com.casadocodigo.dto;
+package br.com.casadocodigo.util.dto.validators;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -20,7 +20,7 @@ import br.com.casadocodigo.util.dto.validators.UniqueValueValidator;
 
 public class UniqueValueValidatorTest {
 	
-	@DisplayName("Not existent values")
+	@DisplayName("Non existent values")
 	@ParameterizedTest(name = "should {arguments} not exist already ")
     @ValueSource(strings = {"nonExistentValue"})
 	public void test1(String email) {

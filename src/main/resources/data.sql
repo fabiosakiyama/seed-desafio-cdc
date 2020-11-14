@@ -9,6 +9,7 @@ INSERT INTO LIVRO (titulo, resumo, sumario, preco, numero_de_paginas, isbn, data
 
 INSERT INTO PAIS (nome) VALUES ('Brasil')
 INSERT INTO PAIS (nome) VALUES ('Argentina')
+INSERT INTO PAIS (nome) VALUES ('USA')
 
 INSERT INTO ESTADO (nome, pais_id) VALUES ('São Paulo', 1)
 INSERT INTO ESTADO (nome, pais_id) VALUES ('Minas Gerais', 1)
