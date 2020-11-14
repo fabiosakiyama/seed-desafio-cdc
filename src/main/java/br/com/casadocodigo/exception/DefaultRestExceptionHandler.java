@@ -28,11 +28,16 @@ public class DefaultRestExceptionHandler extends ResponseEntityExceptionHandler 
 		List<String> errors = new ArrayList<String>();
 		Locale locale = LocaleContextHolder.getLocale();
 		for (FieldError error : ex.getBindingResult().getFieldErrors()) {
-			String code = error.getObjectName() + "." + error.getField();
-			Object[] arguments = error.getArguments();
-			errors.add(messageSource.getMessage(code, arguments, locale) + ": " + messageSource.getMessage(error, locale));
+			errors.add(error.getField() + extracted(error) + ": " + messageSource.getMessage(error, locale));
 		}
 		DefaultApiError apiError = new DefaultApiError(errors);
 		return handleExceptionInternal(ex, apiError, headers, status, request);
+	}
+
+	private Object extracted(FieldError error) {
+		if(error.getRejectedValue() != null) {
+			return " '" + error.getRejectedValue() + "' ";
+		}
+		return "";
 	}
 }

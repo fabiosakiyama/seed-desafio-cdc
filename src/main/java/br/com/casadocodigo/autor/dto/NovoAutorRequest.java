@@ -1,5 +1,7 @@
 package br.com.casadocodigo.autor.dto;
 
+import java.util.Locale;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -25,9 +27,13 @@ public class NovoAutorRequest {
 	@NotBlank
 	@Size(max = 400)
 	private String descricao;
-
+	
 	public Autor toModel() {
 		return new Autor(nome, email, descricao);
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(Locale.IsoCountryCode.values());
 	}
 
 }
