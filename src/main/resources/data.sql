@@ -15,3 +15,6 @@ INSERT INTO PAIS (nome) VALUES ('USA')
 INSERT INTO ESTADO (nome, pais_id) VALUES ('São Paulo', 1)
 INSERT INTO ESTADO (nome, pais_id) VALUES ('Minas Gerais', 1)
 INSERT INTO ESTADO (nome, pais_id) VALUES ('Buenos Aires', 2)
+
+INSERT INTO CUPOM (codigo, percentual_desconto, validade_do_cupom) VALUES ('cupom-expirado', 50, '2000-12-31')
+INSERT INTO CUPOM (codigo, percentual_desconto, validade_do_cupom) VALUES ('cupom-valido', 50, '2099-12-31')

@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 import br.com.casadocodigo.domain.compra.model.Compra;
 import lombok.Data;
 
+/*
+ * 3 (max 9)
+ */
 @Data
 public class NovaCompraResponse {
 	
@@ -35,8 +38,17 @@ public class NovaCompraResponse {
 	
 	private BigDecimal total;
 	
+	private BigDecimal totalComDesconto;
+	
+	private boolean existeCupom;
+	
+	private Integer valorPercentualCupom;
+	
+	private String codigoCupom;
+	
 	private List<NovaCompraItemResponse> itens = new ArrayList<>();
 
+	//1
 	public NovaCompraResponse(Compra compra) {
 		this.email = compra.getEmail();
 		this.nome = compra.getNome();
@@ -50,6 +62,14 @@ public class NovaCompraResponse {
 		this.telefone = compra.getTelefone();
 		this.cep = compra.getCep();
 		this.total = compra.getTotal();
+		this.existeCupom = compra.getCupom() != null;
+		//1
+		if(existeCupom) {
+			this.valorPercentualCupom = compra.getCupom().getPercentualDesconto();
+			this.codigoCupom = compra.getCupom().getCodigo();
+			this.totalComDesconto = compra.getTotalComDesconto();
+		}
+		//1
 		this.itens = compra.getItens().stream().map(i -> new NovaCompraItemResponse(i.getNomeLivro(), i.getQuantidade())).collect(Collectors.toList());
 	}
 }

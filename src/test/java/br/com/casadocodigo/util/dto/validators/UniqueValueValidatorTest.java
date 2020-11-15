@@ -30,6 +30,7 @@ public class UniqueValueValidatorTest {
 		assertTrue(uniqueValueValidator.isValid(email, null));
 	}
 	
+	@SuppressWarnings("deprecation")
 	@DisplayName("Existent values")
 	@ParameterizedTest(name = "should {arguments} exist already ")
     @ValueSource(strings = {"existentValue"})

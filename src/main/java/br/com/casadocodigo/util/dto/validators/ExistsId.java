@@ -19,4 +19,6 @@ public @interface ExistsId {
 	Class<? extends Payload>[] payload() default {};
 	
 	Class<?> klass();
+	
+	boolean isOptional() default false;
 }

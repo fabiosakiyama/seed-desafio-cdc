@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
@@ -33,6 +34,15 @@ public class DefaultRestExceptionHandler extends ResponseEntityExceptionHandler 
 		DefaultApiError apiError = new DefaultApiError(errors);
 		return handleExceptionInternal(ex, apiError, headers, status, request);
 	}
+
+	@ExceptionHandler({ IllegalArgumentException.class })
+	public ResponseEntity<Object> handleIllegalArgumentException(IllegalArgumentException ex,
+			WebRequest request) {
+		String error = messageSource.getMessage(ex.getMessage(), null, LocaleContextHolder.getLocale());
+		DefaultApiError apiError = new DefaultApiError(error);
+		return new ResponseEntity<Object>(apiError, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+	}
+
 
 	private Object extracted(FieldError error) {
 		if(error.getRejectedValue() != null) {
