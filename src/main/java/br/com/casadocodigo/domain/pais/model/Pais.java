@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import br.com.casadocodigo.domain.estado.model.Estado;
 import lombok.Getter;
@@ -21,7 +22,8 @@ public class Pais {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, unique = true)
+	@NotNull
+	@Column(unique = true)
 	private String nome;
 	
 	@OneToMany(mappedBy = "pais", orphanRemoval = true)

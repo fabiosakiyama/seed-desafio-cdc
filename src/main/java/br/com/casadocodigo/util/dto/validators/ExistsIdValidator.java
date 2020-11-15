@@ -19,6 +19,6 @@ public class ExistsIdValidator implements ConstraintValidator<ExistsId, Long> {
 	}
 
 	public boolean isValid(Long value, ConstraintValidatorContext context) {
-		return manager.find(klass, value) != null;
+		return value != null && manager.find(klass, value) != null;
 	}
 }

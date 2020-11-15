@@ -1,4 +1,4 @@
-package br.com.casadocodigo.domain.pagamento.dto;
+package br.com.casadocodigo.domain.compra.dto;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +31,7 @@ public class PaisContemEstadosValidator implements Validator{
 	//1
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return clazz.isAssignableFrom(NovoPagamentoRequest.class);
+		return clazz.isAssignableFrom(NovaCompraRequest.class);
 	}
 
 	// 7
@@ -40,7 +40,7 @@ public class PaisContemEstadosValidator implements Validator{
 		if (errors.hasErrors()) {
 			return;
 		}
-		NovoPagamentoRequest request = (NovoPagamentoRequest) target;
+		NovaCompraRequest request = (NovaCompraRequest) target;
 		
 		Optional<Pais> possivelPais = paisRepository.findById(request.getPaisId());
 		if(possivelPais.isEmpty()) {

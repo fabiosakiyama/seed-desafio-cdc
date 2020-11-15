@@ -16,6 +16,8 @@ import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Errors;
 
 import br.com.casadocodigo.builder.NovoPagamentoRequestBuilder;
+import br.com.casadocodigo.domain.compra.dto.NovaCompraRequest;
+import br.com.casadocodigo.domain.compra.dto.PaisContemEstadosValidator;
 import br.com.casadocodigo.domain.estado.model.Estado;
 import br.com.casadocodigo.domain.estado.model.EstadoBuilder;
 import br.com.casadocodigo.domain.pais.model.Pais;
@@ -26,8 +28,8 @@ public class PaisContemEstadosValidatorTest {
 
 	@DisplayName("Pagamento com país inválido, gera erro")
 	@ParameterizedTest
-	@MethodSource("br.com.casadocodigo.domain.pagamento.dto.PaisContemEstadosValidatorTest#defaults")
-	public void teste1(NovoPagamentoRequest request) {
+	@MethodSource("br.com.casadocodigo.domain.compra.dto.PaisContemEstadosValidatorTest#defaults")
+	public void teste1(NovaCompraRequest request) {
 		PaisRepository paisRepository = Mockito.mock(PaisRepository.class);
 		MessageSource messageSource = Mockito.mock(MessageSource.class);
 		Errors errors = new BeanPropertyBindingResult(request, "request");
@@ -41,8 +43,8 @@ public class PaisContemEstadosValidatorTest {
 	
 	@DisplayName("Pagamento com país válido, sem estados e sem estadoId, não gera erro")
 	@ParameterizedTest
-	@MethodSource("br.com.casadocodigo.domain.pagamento.dto.PaisContemEstadosValidatorTest#defaults")
-	public void teste2(NovoPagamentoRequest request) {
+	@MethodSource("br.com.casadocodigo.domain.compra.dto.PaisContemEstadosValidatorTest#defaults")
+	public void teste2(NovaCompraRequest request) {
 		request.setEstadoId(null);
 		PaisRepository paisRepository = Mockito.mock(PaisRepository.class);
 		MessageSource messageSource = Mockito.mock(MessageSource.class);
@@ -57,8 +59,8 @@ public class PaisContemEstadosValidatorTest {
 	
 	@DisplayName("Pagamento com país válido, sem estados e com estadoId, gera erro")
 	@ParameterizedTest
-	@MethodSource("br.com.casadocodigo.domain.pagamento.dto.PaisContemEstadosValidatorTest#defaults")
-	public void teste3(NovoPagamentoRequest request) {
+	@MethodSource("br.com.casadocodigo.domain.compra.dto.PaisContemEstadosValidatorTest#defaults")
+	public void teste3(NovaCompraRequest request) {
 		request.setEstadoId(nextLong());
 		PaisRepository paisRepository = Mockito.mock(PaisRepository.class);
 		MessageSource messageSource = Mockito.mock(MessageSource.class);
@@ -73,8 +75,8 @@ public class PaisContemEstadosValidatorTest {
 	
 	@DisplayName("Pagamento com país válido, com estados, e com estadoId fazendo match, não gera erro")
 	@ParameterizedTest
-	@MethodSource("br.com.casadocodigo.domain.pagamento.dto.PaisContemEstadosValidatorTest#defaults")
-	public void teste4(NovoPagamentoRequest request) {
+	@MethodSource("br.com.casadocodigo.domain.compra.dto.PaisContemEstadosValidatorTest#defaults")
+	public void teste4(NovaCompraRequest request) {
 		PaisRepository paisRepository = Mockito.mock(PaisRepository.class);
 		MessageSource messageSource = Mockito.mock(MessageSource.class);
 		Errors errors = new BeanPropertyBindingResult(request, "request");
@@ -89,8 +91,8 @@ public class PaisContemEstadosValidatorTest {
 	
 	@DisplayName("Pagamento com país válido, com estados, e com estadoId não fazendo match, gera erro")
 	@ParameterizedTest
-	@MethodSource("br.com.casadocodigo.domain.pagamento.dto.PaisContemEstadosValidatorTest#defaults")
-	public void teste5(NovoPagamentoRequest request) {
+	@MethodSource("br.com.casadocodigo.domain.compra.dto.PaisContemEstadosValidatorTest#defaults")
+	public void teste5(NovaCompraRequest request) {
 		PaisRepository paisRepository = Mockito.mock(PaisRepository.class);
 		MessageSource messageSource = Mockito.mock(MessageSource.class);
 		Errors errors = new BeanPropertyBindingResult(request, "request");

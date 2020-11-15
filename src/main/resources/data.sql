@@ -6,6 +6,7 @@ INSERT INTO CATEGORIA (nome) VALUES ('Java')
 INSERT INTO CATEGORIA (nome) VALUES ('Python')
 
 INSERT INTO LIVRO (titulo, resumo, sumario, preco, numero_de_paginas, isbn, data_de_publicacao, categoria_id, autor_id) VALUES ('Livro de algo', 'Um resumo sobre o livro de algo', null, 25.90, 120, '1-XAS-3', '2020-11-14', 1, 1)
+INSERT INTO LIVRO (titulo, resumo, sumario, preco, numero_de_paginas, isbn, data_de_publicacao, categoria_id, autor_id) VALUES ('Livro de Python', 'Um resumo sobre o livro de python', null, 55.92, 170, '1-XAS-4', '2020-11-14', 3, 2)
 
 INSERT INTO PAIS (nome) VALUES ('Brasil')
 INSERT INTO PAIS (nome) VALUES ('Argentina')

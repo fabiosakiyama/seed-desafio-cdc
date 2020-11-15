@@ -3,14 +3,14 @@ package br.com.casadocodigo.builder;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
 import static org.apache.commons.lang3.RandomUtils.nextLong;
 
-import br.com.casadocodigo.domain.pagamento.dto.NovoPagamentoRequest;
+import br.com.casadocodigo.domain.compra.dto.NovaCompraRequest;
 
 public class NovoPagamentoRequestBuilder {
 	
-	private NovoPagamentoRequest request;
+	private NovaCompraRequest request;
 	
 	private NovoPagamentoRequestBuilder() {
-		this.request = new NovoPagamentoRequest();
+		this.request = new NovaCompraRequest();
 	}
 	
 	public static NovoPagamentoRequestBuilder builder() {
@@ -32,7 +32,7 @@ public class NovoPagamentoRequestBuilder {
 	    return this;
 	}
 	
-	public NovoPagamentoRequest build() {
+	public NovaCompraRequest build() {
 		return this.request;
 	}
 }

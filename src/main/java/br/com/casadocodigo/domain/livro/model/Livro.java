@@ -9,11 +9,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import br.com.casadocodigo.domain.autor.model.Autor;
 import br.com.casadocodigo.domain.categoria.model.Categoria;
@@ -27,10 +27,12 @@ public class Livro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, unique = true)
+	@NotNull
+	@Column(unique = true)
 	private String titulo;
 	
-	@Column(nullable = false, length = 500)
+	@NotNull
+	@Column(length = 500)
 	private String resumo;
 	
 	@Lob
@@ -38,27 +40,31 @@ public class Livro {
 	private String sumario;
 
 	@Min(value = 20)
-	@Column(nullable = false)
+	@NotNull
+	@Column
 	private BigDecimal preco;
 
 	@Min(value = 100)
-	@Column(nullable = false)
+	@NotNull
+	@Column
 	private long numeroDePaginas;
 
 	@Lob
-	@Column(nullable = false, unique = true)
+	@NotNull
+	@Column(unique = true)
 	private String isbn;
 	
 	@Future
-	@Column(nullable = false)
+	@NotNull
+	@Column
 	private LocalDate dataDePublicacao;
 	
+	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 	
+	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "autor_id")
 	private Autor autor;
 	
 	@Deprecated

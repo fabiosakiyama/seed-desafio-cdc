@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
 
@@ -18,16 +19,20 @@ public class Autor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false)
+	@NotNull
+	@Column
 	private String nome;
 	
-	@Column(nullable = false, unique = true)
+	@NotNull
+	@Column(unique = true)
 	private String email;
 	
-	@Column(nullable = false, length = 400)
+	@NotNull
+	@Column(length = 400)
 	private String descricao;
 	
-	@Column(nullable = false)
+	@NotNull
+	@Column
 	private Instant instanteRegistrado;
 	
 	@Deprecated

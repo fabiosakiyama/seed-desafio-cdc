@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import br.com.casadocodigo.domain.pais.model.Pais;
 import lombok.Getter;
@@ -19,10 +20,12 @@ public class Estado {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, unique = true)
+	@NotNull
+	@Column(unique = true)
 	private String nome;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@NotNull
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private Pais pais;
 
 	@Deprecated
