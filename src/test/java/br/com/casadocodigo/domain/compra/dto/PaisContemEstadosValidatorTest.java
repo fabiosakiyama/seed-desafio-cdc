@@ -1,4 +1,4 @@
-package br.com.casadocodigo.domain.pagamento.dto;
+package br.com.casadocodigo.domain.compra.dto;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.apache.commons.lang3.RandomUtils.nextLong;
@@ -16,8 +16,6 @@ import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Errors;
 
 import br.com.casadocodigo.builder.NovoPagamentoRequestBuilder;
-import br.com.casadocodigo.domain.compra.dto.NovaCompraRequest;
-import br.com.casadocodigo.domain.compra.dto.PaisContemEstadosValidator;
 import br.com.casadocodigo.domain.estado.model.Estado;
 import br.com.casadocodigo.domain.estado.model.EstadoBuilder;
 import br.com.casadocodigo.domain.pais.model.Pais;
