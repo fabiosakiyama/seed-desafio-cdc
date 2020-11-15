@@ -15,8 +15,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 
 import br.com.casadocodigo.domain.autor.model.Autor;
-import br.com.casadocodigo.util.dto.validators.UniqueValue;
-import br.com.casadocodigo.util.dto.validators.UniqueValueValidator;
 
 public class UniqueValueValidatorTest {
 	
