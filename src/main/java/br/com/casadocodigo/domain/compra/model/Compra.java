@@ -96,6 +96,10 @@ public class Compra {
 
 	@Deprecated
 	public Compra() {}
+	
+	void setId(Long id) {
+		this.id = id;
+	}
 
 	public Compra(String email, String nome, String sobreNome, String documento, String endereco, String complemento,
 			String cidade, Pais pais, Estado estado, String telefone, String cep) {
@@ -115,7 +119,7 @@ public class Compra {
 	@Transient
 	public BigDecimal getTotal() {
 		//1
-		BigDecimal valorTotal = itens.stream().map(i -> i.getLivro().getPreco().multiply(new BigDecimal(i.getQuantidade()))).reduce(BigDecimal::add).get();
+		BigDecimal valorTotal = itens.stream().map(ItemDeCompra::getValor).reduce(BigDecimal::add).get();
 		return valorTotal;
 	}
 	

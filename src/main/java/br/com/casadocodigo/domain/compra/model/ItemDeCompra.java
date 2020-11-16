@@ -1,5 +1,7 @@
 package br.com.casadocodigo.domain.compra.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -47,5 +49,10 @@ public class ItemDeCompra {
 	@Transient
 	public String getNomeLivro() {
 		return this.livro.getTitulo();
+	}
+	
+	@Transient
+	public BigDecimal getValor() {
+		return this.livro.getPreco().multiply(new BigDecimal(quantidade));
 	}
 }

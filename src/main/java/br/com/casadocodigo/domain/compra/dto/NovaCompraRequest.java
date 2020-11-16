@@ -1,6 +1,7 @@
 package br.com.casadocodigo.domain.compra.dto;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,7 +72,7 @@ public class NovaCompraRequest {
 	//1
 	@NotNull
 	@NotEmpty
-	private List<@Valid NovaCompraItemRequest> itens;
+	private List<@Valid NovaCompraItemRequest> itens = new ArrayList<>();
 	
 	//1
 	@ExistsId(klass = Cupom.class, isOptional = true)

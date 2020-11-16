@@ -3,7 +3,6 @@ package br.com.casadocodigo.domain.compra.dto;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -18,14 +17,11 @@ import br.com.casadocodigo.domain.pais.repository.PaisRepository;
 @Component
 public class PaisContemEstadosValidator implements Validator{
 	
-	MessageSource messageSource;
-	
 	//1
 	private PaisRepository paisRepository;
 	
-	public PaisContemEstadosValidator(MessageSource messageSource, PaisRepository paisRepository) {
+	public PaisContemEstadosValidator( PaisRepository paisRepository) {
 		this.paisRepository = paisRepository;
-		this.messageSource = messageSource;
 	}
 
 	//1
